@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Caching</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+  <% if current_user %>
+  <%= link_to 'Log Out', destroy_user_session_path(user) %>
+  <%else%>
+  <%= link_to 'Sign In', new_user_session_path(user) %>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
